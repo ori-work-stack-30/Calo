@@ -17,23 +17,6 @@ export default function TabLayout() {
   const { isRTL } = useLanguage();
   const { colors } = useTheme();
 
-  const routes = useMemo(
-    () => [
-      "index",
-      "history",
-      "questionnaire",
-      "camera",
-      "statistics",
-      "calendar",
-      "devices",
-      "recommended-menus",
-      "ai-chat",
-      "food-scanner",
-      "profile",
-    ],
-    []
-  );
-
   return (
     <ProtectedRoute>
       <SafeAreaView
@@ -44,6 +27,7 @@ export default function TabLayout() {
           <Tabs
             screenOptions={{
               headerShown: false,
+              tabBarHideOnKeyboard: true,
             }}
             tabBar={(props) => <ScrollableTabBar {...props} />}
           >
